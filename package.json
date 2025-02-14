@@ -1,0 +1,12 @@
+{
+  "name": "silk-ui",
+  "version": "1.0.0",
+  "description": "## Overview A modern, glassmorphic UI library with a sleek dark theme and responsive design.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
