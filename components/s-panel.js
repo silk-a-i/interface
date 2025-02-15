@@ -6,6 +6,8 @@ class SPanel extends HTMLElement {
 
   connectedCallback() {
     const title = this.getAttribute('title') || 'Panel';
+    const isOpen = this.hasAttribute('open');
+
     this.shadowRoot.innerHTML = `
       <style>
         :host {
@@ -48,7 +50,7 @@ class SPanel extends HTMLElement {
         <span>${title}</span>
         <span class="toggle-icon">▼</span>
       </div>
-      <div class="panel-content">
+      <div class="panel-content ${isOpen ? 'open' : ''}">
         <slot></slot>
       </div>
     `;
