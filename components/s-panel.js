@@ -26,7 +26,6 @@ class SPanel extends HTMLElement {
         :host {
           display: flex;
           flex-direction: column;
-          margin: 10px 0;
           background: rgba(255, 255, 255, 0.06);
           border-radius: 8px;
           overflow: hidden;
