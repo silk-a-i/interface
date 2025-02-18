@@ -22,6 +22,13 @@ body {
   line-height: 1.6;
 }
 
+body[data-theme='dark'] {
+  background: linear-gradient(135deg, rgba(15, 15, 26, 0.8), rgba(26, 26, 42, 0.8));
+}
+body[data-theme='red-dark'] {
+  background: url('https://images.unsplash.com/photo-1737304697097-62a820f71964?q=80&w=1469');
+}
+
 body::before {
   content: '';
   position: fixed;
@@ -42,7 +49,7 @@ body::before {
   padding: 20px;
 }
 
-.glass-panel {
+s-card, .glass-panel {
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(12px);
   border-radius: 16px;
@@ -50,7 +57,7 @@ body::before {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
-.container {
+s-container, .container {
   max-width: 600px;
   margin: 50px auto;
   padding: 20px;
@@ -76,45 +83,6 @@ body::before {
 .tab-btn.active {
   background: linear-gradient(45deg, #00b4db, #0083b0);
   box-shadow: 0 0 20px rgba(0, 180, 219, 0.3);
-}
-
-#usage-panel {
-  background: rgba(255, 255, 255, 0.04);
-  padding: 20px;
-  border-radius: 12px;
-  margin: 20px 0;
-}
-
-.usage-bar {
-  height: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  overflow: hidden;
-  margin: 10px 0;
-}
-
-.usage-progress {
-  height: 100%;
-  background: linear-gradient(45deg, #00b4db, #0083b0);
-  border-radius: 4px;
-  transition: width 0.3s ease;
-}
-
-.upgrade-btn {
-  display: inline-block;
-  background: linear-gradient(45deg, #f6d365, #fda085);
-  color: white;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.upgrade-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(246, 211, 101, 0.3);
 }
 
 .header-with-logout {
@@ -146,21 +114,8 @@ body::before {
   border-radius: 12px;
 }
 
-.revoke-btn {
-  width: auto;
-  padding: 8px 16px;
-  background: rgba(255, 0, 0, 0.15);
-  margin: 0;
-  font-weight: 500;
-}
 
-.revoke-btn:hover {
-  background: rgba(255, 0, 0, 0.25);
-}
 
-#keys-list {
-  margin-top: 24px;
-}
 
 h2 {
   font-weight: 600;
@@ -176,3 +131,28 @@ p {
   margin: 8px 0;
   color: rgba(255, 255, 255, 0.8);
 }
+
+footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 1rem;
+  font-size: 0.6rem;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+  margin: 3px 0;
+}
+
+a {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #00b4db;
+}
+

@@ -1,17 +1,31 @@
 class SPanel extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
+  constructor () {
+    super()
+    this.attachShadow({ mode: 'open' })
   }
 
-  connectedCallback() {
-    const title = this.getAttribute('title') || 'Panel';
-    const isOpen = this.hasAttribute('open');
+  static get observedAttributes() {
+    return ['title'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'title' && this.shadowRoot) {
+      const titleSpan = this.shadowRoot.querySelector('.panel-header span')
+      if (titleSpan) {
+        titleSpan.textContent = newValue || 'Panel'
+      }
+    }
+  }
+
+  connectedCallback () {
+    const title = this.getAttribute('title') || 'Panel'
+    const isOpen = this.hasAttribute('open')
 
     this.shadowRoot.innerHTML = `
       <style>
         :host {
-          display: block;
+          display: flex;
+          flex-direction: column;
           margin: 10px 0;
           background: rgba(255, 255, 255, 0.06);
           border-radius: 8px;
@@ -53,17 +67,19 @@ class SPanel extends HTMLElement {
       <div class="panel-content ${isOpen ? 'open' : ''}">
         <slot></slot>
       </div>
-    `;
+    `
 
-    const header = this.shadowRoot.querySelector('.panel-header');
-    const content = this.shadowRoot.querySelector('.panel-content');
-    const icon = this.shadowRoot.querySelector('.toggle-icon');
+    const header = this.shadowRoot.querySelector('.panel-header')
+    const content = this.shadowRoot.querySelector('.panel-content')
+    const icon = this.shadowRoot.querySelector('.toggle-icon')
 
-    header.addEventListener('click', () => {
-      content.classList.toggle('open');
-      icon.classList.toggle('rotated');
-    });
+    header.addEventListener('click', (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+      content.classList.toggle('open')
+      icon.classList.toggle('rotated')
+    })
   }
 }
 
-customElements.define('s-panel', SPanel);
+customElements.define('s-panel', SPanel)

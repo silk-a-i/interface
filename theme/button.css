@@ -1,0 +1,100 @@
+button {
+    display: block;
+    margin: 12px 0;
+    padding: 14px;
+    background: linear-gradient(45deg, #00b4db, #0083b0);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+
+[block] {
+    width: 100%;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 180, 219, 0.4);
+}
+
+button:disabled {
+    background: rgba(255, 255, 255, 0.12);
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+button {
+    margin: 0;
+    /* padding: var(--padding); */
+    padding: 8px;
+}
+
+button[variant='filled'] {
+    background: linear-gradient(45deg, #00b4db, #0083b0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+button[variant='filled']:hover {
+    background: linear-gradient(45deg, #f6d365, #fda085);
+}
+
+button[variant='outlined'] {
+    background: none;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+button[variant='outlined']:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+button[variant='text'] {
+    background: none;
+    color: white;
+    border: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+button[variant='text']:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+button[variant='icon'] {
+    background: none;
+    color: white;
+    border: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+button[variant='icon']:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+button[size='small'] {
+    padding: 5px;
+}
+
+button[size='medium'] {
+    padding: 8px;
+}
+
+button[size='large'] {
+    padding: 12px;
+}

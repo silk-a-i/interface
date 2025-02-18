@@ -1,0 +1,21 @@
+:root {
+  --padding-s: 8px;
+  --padding-m: 12px;
+  --padding-l: 16px;
+
+  /* Colors */
+  --primary: #00b4db;
+  --secondary: #0083b0;
+  --danger: #ff0000;
+  --warning: #f6d365;
+  --success: #4cd137;
+  --info: #00a8ff;
+  --light: #f8f9fa;
+  --dark: #343a40;
+}
+
+/** @todo backprort to interface */
+
+s-panel {
+  height: fit-content; 
+}

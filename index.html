@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Silk UI Components</title>
+    <title>Silk Interface</title>
     <link rel="stylesheet" href="./index.css">
+    <link rel="icon" href="./theme/logo.png">
     <script type="module" src="./components/index.js"></script>
 </head>
+
 <body>
     <div class="container">
-        <div class="glass-panel">
-            <h2>Components Showcase</h2>
+        <h2>Components Showcase</h2>
+        <s-panel open>
             
             <s-panel title="Form Details" open>
                 <form>
@@ -19,13 +21,31 @@
                 </form>
             </s-panel>
 
-            <s-panel title="Usage Metrics">
+            <s-panel title="Usage Metrics" open>
                 <div class="usage-bar">
                     <div class="usage-progress" style="width: 65%"></div>
                 </div>
                 <a href="#" class="upgrade-btn">Upgrade Plan</a>
             </s-panel>
-        </div>
+
+            <!-- <s-panel title="Form elements" open> -->
+                <form gap>
+                    <input type="text" placeholder="Username">
+                    <input type="password" placeholder="Password">
+                    <select onselect="document.body.style.backgroundColor = 'red'">
+                        <option>red</option>
+                    </select>
+                    <textarea type="password" placeholder="Password"></textarea>
+                    <s-row>
+                        <button>Login</button>
+                        <button variant="outlined">outlined</button>
+                        <button block>block</button>
+                    </s-row>
+                </form>
+            <!-- </s-panel> -->
+        </s-panel>
+
+        <footer>silk interface vfeb25</footer>
     </div>
 </body>
 </html>
