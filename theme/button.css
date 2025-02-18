@@ -1,16 +1,19 @@
 button {
     display: block;
-    margin: 12px 0;
-    padding: 14px;
-    background: linear-gradient(45deg, #00b4db, #0083b0);
+    padding: var(--padding, 8px);
     color: white;
-    border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 500;
+}
+
+button {
+    background: none;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 [block] {
@@ -30,14 +33,8 @@ button:disabled {
     color: rgba(255, 255, 255, 0.5);
 }
 
-button {
-    margin: 0;
-    /* padding: var(--padding); */
-    padding: 8px;
-}
-
 button[variant='filled'] {
-    background: linear-gradient(45deg, #00b4db, #0083b0);
+    background: var(--color,#fda085);
     color: white;
     border: none;
     border-radius: 5px;
@@ -46,7 +43,7 @@ button[variant='filled'] {
 }
 
 button[variant='filled']:hover {
-    background: linear-gradient(45deg, #f6d365, #fda085);
+    /* background: linear-gradient(45deg, #f6d365, #fda085); */
 }
 
 button[variant='outlined'] {

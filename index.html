@@ -10,9 +10,9 @@
 
 <body>
     <div class="container">
+        <s-style-configurator></s-style-configurator>
         <h2>Components Showcase</h2>
-        <s-panel open>
-            
+        <s-card>
             <s-panel title="Form Details" open>
                 <form>
                     <input type="text" placeholder="Username">
@@ -21,14 +21,23 @@
                 </form>
             </s-panel>
 
-            <s-panel title="Usage Metrics" open>
-                <div class="usage-bar">
-                    <div class="usage-progress" style="width: 65%"></div>
-                </div>
+            <s-panel title="Progress" open>
+                <progress></progress>
+                <progress value="50" max="100"></progress>
+                <progress color="primary" value="50" max="100"></progress>
+                <progress color="secondary" value="50" max="100"></progress>
+                <progress color="success" value="50" max="100"></progress>
+                <progress color="warning" value="50" max="100"></progress>
+                <progress color="danger" value="50" max="100"></progress>
+               
+                <!-- <s-progress>
+                    <div style="width:25%">25%</div>
+                </s-progress> -->
+
                 <a href="#" class="upgrade-btn">Upgrade Plan</a>
             </s-panel>
 
-            <!-- <s-panel title="Form elements" open> -->
+            <s-panel title="Form elements">
                 <form gap>
                     <input type="text" placeholder="Username">
                     <input type="password" placeholder="Password">
@@ -42,8 +51,37 @@
                         <button block>block</button>
                     </s-row>
                 </form>
-            <!-- </s-panel> -->
-        </s-panel>
+            </s-panel>
+
+            <s-panel title="Buttons">
+                <button>Default</button>
+
+                <h3>Colors</h3>
+                <s-row>
+                    <button color="primary">Primary</button>
+                    <button color="danger">danger</button>
+                    <button color="secondary">secondary</button>
+                    <button color="warning">warning</button>
+                    <button color="success">success</button>
+                </s-row>
+
+                <h3>Variants</h3>
+                <s-row>
+                    <button variant="filled">filled</button>
+                    <button variant="outlined">outlined</button>
+                    <button variant="icon">icon</button>
+                    <button variant="text">text</button>
+                </s-row>
+
+                <h3>Block</h3>
+                <button block>block</button>
+            </s-panel>
+
+            <s-panel title="Icons">
+                <button><s-icon>✨</s-icon> Get started</button>
+            </s-panel>
+
+        </s-card>
 
         <footer>silk interface vfeb25</footer>
     </div>

@@ -1,44 +1,67 @@
-.usage-bar {
-    height: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    overflow: hidden;
-    margin: 10px 0;
+
+/* https://codepen.io/martinvz/pen/vYRxpKG */
+progress {
+    --track: rgba(255, 255, 255, 0.1);
+    --progress: var(--color, blue);
+    --indeterminate-track: linear-gradient(to right,
+            var(--track) 45%,
+            var(--progress) 0%,
+            var(--progress) 55%,
+            var(--track) 0%);
+    --indeterminate-track-size: 225% 100%;
+    --indeterminate-track-animation: progress-loading-simple 2s infinite ease;
+    position: relative;
 }
 
-.usage-progress {
+progress:indeterminate:after {
+    content: "";
+    inset: 0;
+    position: absolute;
+    background: var(--indeterminate-track);
+    background-size: var(--indeterminate-track-size);
+    background-position: right;
+    -webkit-animation: var(--indeterminate-track-animation);
+    animation: var(--indeterminate-track-animation);
+}
+
+@-webkit-keyframes progress-loading-simple {
+    50% {
+        background-position: left;
+    }
+}
+
+@keyframes progress-loading-simple {
+    50% {
+        background-position: left;
+    }
+}
+
+.usage-bar,
+s-progress,
+progress {
+    height: 8px;
+    background: var(--track);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+s-progress {
+    display: flex;
+    height: inherit;
+    width: 100%;
+}
+
+.usage-progress,
+s-progress div,
+progress::-webkit-progress-value {
     height: 100%;
-    background: linear-gradient(45deg, #00b4db, #0083b0);
+    /* background: linear-gradient(45deg, var(--color, #00b4db), #0083b0); */
+    background: var(--color, #00b4db);
     border-radius: 4px;
     transition: width 0.3s ease;
 }
 
-.upgrade-btn {
-    display: inline-block;
-    background: linear-gradient(45deg, #f6d365, #fda085);
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.upgrade-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(246, 211, 101, 0.3);
-}
-
-
-.revoke-btn {
-    width: auto;
-    padding: 8px 16px;
-    background: rgba(255, 0, 0, 0.15);
-    margin: 0;
-    font-weight: 500;
-}
-
-.revoke-btn:hover {
-    background: rgba(255, 0, 0, 0.25);
+progress::-webkit-progress-bar {
+    background: var(--track);
+    border-radius: 4px;
 }

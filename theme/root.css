@@ -1,7 +1,10 @@
 :root {
+  --padding: 8px;
   --padding-s: 8px;
   --padding-m: 12px;
   --padding-l: 16px;
+
+  --glassyness: 4px;
 
   /* Colors */
   --primary: #00b4db;
@@ -10,12 +13,30 @@
   --warning: #f6d365;
   --success: #4cd137;
   --info: #00a8ff;
-  --light: #f8f9fa;
-  --dark: #343a40;
 }
 
 /** @todo */
 
 s-panel {
   height: fit-content; 
+}
+
+/* Color helpers */
+[color='primary'] {
+  --color: var(--primary);
+}
+[color='secondary'] {
+  --color: var(--secondary);
+}
+[color='danger'] {
+  --color: var(--danger);
+}
+[color='warning'] {
+  --color: var(--warning);
+}
+[color='success'] {
+  --color: var(--success);
+}
+[color='info'] {
+  --color: var(--info);
 }
