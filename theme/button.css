@@ -2,7 +2,7 @@ button {
     display: block;
     padding: var(--padding, 8px);
     color: white;
-    border-radius: 8px;
+    border-radius: var(--radius);
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -10,6 +10,8 @@ button {
     background: none;
     border: 1px solid rgba(255, 255, 255, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    /* check this */
+    height: 100%;
 }
 
 button[block] {
@@ -64,6 +66,7 @@ button[variant='icon']:hover {
 /* size */
 button[size='small'] {
     padding: 5px;
+    font-size: 0.8rem;
 }
 
 button[size='medium'] {
@@ -72,4 +75,5 @@ button[size='medium'] {
 
 button[size='large'] {
     padding: 12px;
+    font-size: 1.2rem;
 }

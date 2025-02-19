@@ -15,6 +15,8 @@ s-toolbar {
 s-row {
     display: flex;
     gap: 5px;
+}
+s-row[wrap] {
     flex-wrap: wrap;
 }
 

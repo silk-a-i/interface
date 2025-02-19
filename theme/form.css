@@ -1,12 +1,11 @@
 /* Form specific styles */
 input {
   display: block;
-  margin: 12px 0;
   padding: 14px;
   width: 100%;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 8px;
+  border-radius: var(--radius);
   color: white;
   transition: all 0.3s ease;
 }
@@ -18,9 +17,12 @@ input:focus {
   background: rgba(255, 255, 255, 0.08);
 }
 
-input {
-  width: inherit;
-  margin: 0px;
+input[type='checkbox'] {
+  width: auto;
+  display: inline-block;
+  padding: 0;
+  margin-right: 8px;
+  cursor: pointer;
 }
 
 input[variant='filled'] {
@@ -28,7 +30,7 @@ input[variant='filled'] {
   padding: 10px;
   background: rgba(255, 255, 255, 0.1);
   border: none;
-  border-radius: 5px;
+  border-radius: var(--radius);
   color: white;
 }
 
@@ -42,7 +44,7 @@ textarea {
   padding: 10px;
   background: rgba(255, 255, 255, 0.1);
   border: none;
-  border-radius: 5px;
+  border-radius: var(--radius);
   color: white;
   width: 100%;
 }
@@ -52,7 +54,7 @@ textarea[variant='filled'] {
   padding: 10px;
   background: rgba(255, 255, 255, 0.1);
   border: none;
-  border-radius: 5px;
+  border-radius: var(--radius);
   color: white;
 }
 
@@ -61,7 +63,7 @@ select {
   padding: 10px;
   background: rgba(255, 255, 255, 0.1);
   border: none;
-  border-radius: 5px;
+  border-radius: var(--radius);
   color: white;
   width: 100%;
 }

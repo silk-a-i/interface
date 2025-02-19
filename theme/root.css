@@ -5,6 +5,8 @@
   --padding-l: 16px;
 
   --glassyness: 4px;
+  /** control border radius */
+  --radius: 8px;
 
   /* Colors */
   --primary: #00b4db;
